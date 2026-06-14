@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Malek Imam — CV</title>
+<style>
+  /* ---- ATS-friendly: single column, system fonts, black on white ---- */
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  body{
+    font-family: "Calibri", "Arial", "Helvetica", sans-serif;
+    color:#1a1a1a; font-size:10.5pt; line-height:1.4;
+    max-width:760px; margin:0 auto; padding:28px 34px;
+  }
+  h1{ font-size:23pt; letter-spacing:.3px; }
+  .role{ font-size:11.5pt; color:#0a6b5a; font-weight:600; margin-top:2px; }
+  .contact{ font-size:9.5pt; color:#333; margin-top:7px; }
+  .contact a{ color:#1a1a1a; text-decoration:none; }
+  .contact span{ white-space:nowrap; }
+  .sep{ color:#aaa; margin:0 6px; }
+
+  h2{
+    font-size:11pt; text-transform:uppercase; letter-spacing:1px;
+    color:#0a6b5a; border-bottom:1.5px solid #0a6b5a;
+    padding-bottom:3px; margin:16px 0 9px;
+  }
+
+  .summary{ font-size:10.5pt; }
+
+  .job{ margin-bottom:11px; }
+  .job-top{ display:flex; justify-content:space-between; align-items:baseline; }
+  .job-title{ font-weight:700; font-size:10.8pt; }
+  .job-meta{ color:#555; font-size:9.5pt; white-space:nowrap; }
+  .job-sub{ font-style:italic; color:#444; font-size:9.8pt; margin-bottom:3px; }
+  ul{ margin:3px 0 0 17px; }
+  li{ margin-bottom:2px; }
+
+  .proj{ margin-bottom:8px; }
+  .proj-title{ font-weight:700; }
+  .proj-stack{ color:#555; font-size:9.3pt; }
+
+  .skills-row{ margin-bottom:4px; }
+  .skills-row b{ display:inline-block; min-width:150px; color:#222; }
+
+  .edu-top{ display:flex; justify-content:space-between; }
+  .edu-title{ font-weight:700; }
+
+  .note{ background:#fff7d6; border-left:3px solid #e0b000; padding:2px 6px;
+          font-size:9pt; color:#7a5b00; }
+  @media print{ .note{ display:none; } body{ padding:14px 22px; } }
+</style>
+</head>
+<body>
+
+  <header>
+    <h1>Malek Imam</h1>
+    <div class="role">AI / Machine Learning Engineer</div>
+    <div class="contact">
+      <span>Damascus, Syria</span><span class="sep">|</span>
+      <span><a href="tel:+963940965738">+963 940 965 738</a></span><span class="sep">|</span>
+      <span><a href="mailto:malekimam123@gmail.com">malekimam123@gmail.com</a></span><br>
+      <span>linkedin.com/in/malek-imam-024651276</span><span class="sep">|</span>
+      <span>github.com/Malekmontanaimam</span>
+    </div>
+  </header>
+
+  <h2>Summary</h2>
+  <p class="summary">
+    Final-year AI Engineering student with hands-on experience building production-grade RAG systems,
+    multimodal retrieval pipelines, and Arabic-first NLP. Skilled at integrating LLMs (DeepSeek-V3),
+    vision-language models (BLIP2), and Arabic NLP (AraBERT) with vector databases (FAISS), and shipping
+    them through clean FastAPI / Laravel backends. Open to Machine Learning Engineer roles.
+  </p>
+
+  <h2>Technical Skills</h2>
+  <div class="skills-row"><b>AI &amp; Machine Learning:</b> RAG, LLMs (DeepSeek-V3), Diffusion (DDPM / LayoutDM), BLIP2 (VLM), AraBERT, FAISS, Collaborative Filtering (ALS), PyTorch, TensorFlow, scikit-learn</div>
+  <div class="skills-row"><b>Frameworks &amp; Libraries:</b> FastAPI, NestJS, Next.js, Node.js, Laravel, React, LangChain, Prisma, Apollo / GraphQL, Three.js</div>
+  <div class="skills-row"><b>Databases &amp; Storage:</b> FAISS (Vector), ChromaDB, PostgreSQL, MySQL, HNSW Indexing</div>
+  <div class="skills-row"><b>DevOps &amp; Tools:</b> Git / GitHub, Docker, REST APIs, Linux, Postman</div>
+  <div class="skills-row"><b>Languages:</b> Arabic (Native), English (Professional<span class="note">&nbsp;CONFIRM your level (e.g. B2 / C1)&nbsp;</span>)</div>
+
+  <h2>Experience</h2>
+
+  <div class="job">
+    <div class="job-top">
+      <span class="job-title">AI Engineer<span class="note">&nbsp;was "Intern" — pick one title&nbsp;</span> &mdash; Trendova</span>
+      <span class="job-meta">Jan 2024 &ndash; Present<span class="note">&nbsp;2.5 yrs as "intern" looks off — fix&nbsp;</span></span>
+    </div>
+    <div class="job-sub">RecomindSystem &middot; Remote</div>
+    <ul>
+      <li>Developed and deployed a production-grade RAG system using DeepSeek-V3 for multilingual chatbot functionality.</li>
+      <li>Implemented a multimodal retrieval pipeline integrating BLIP2 vision-language models with Arabic NLP (AraBERT v2).</li>
+      <li>Built a scalable vector database with FAISS + HNSW indexing for real-time product search.</li>
+      <li>Designed a hybrid recommender combining collaborative filtering (ALS) and content-based approaches.</li>
+      <li>Achieved 90%+ accuracy in Arabic&ndash;English cross-lingual retrieval and cut response latency by 40%.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-top">
+      <span class="job-title">Backend Engineer &mdash; MediCore</span>
+      <span class="job-meta">Jan 2023 &ndash; 2024</span>
+    </div>
+    <div class="job-sub">Medical Management System &middot; Remote</div>
+    <ul>
+      <li>Built a comprehensive medical platform with Laravel serving patients, doctors, secretaries, and admins.</li>
+      <li>Architected 20+ interconnected models &mdash; appointments, medical files, profiles, and specialties.</li>
+      <li>Implemented multi-role auth with RBAC, two-factor authentication, and Laravel Sanctum tokens.</li>
+      <li>Designed RESTful APIs for booking, file uploads, dynamic doctor search, and real-time notifications.</li>
+    </ul>
+  </div>
+
+  <h2>Selected Projects</h2>
+
+  <div class="proj">
+    <div class="proj-title">TrustAngle &mdash; AI Social-Media Platform (Graduation Project)</div>
+    <div>Microservices SaaS that auto-generates social-media designs via a hybrid diffusion pipeline (LayoutDM + DDPM, trained from scratch). 21-model PostgreSQL schema, JWT/RBAC, multi-tenant workspaces &amp; billing.</div>
+    <div class="proj-stack">Diffusion (DDPM/LayoutDM), PyTorch, Next.js, NestJS, FastAPI, PostgreSQL</div>
+  </div>
+
+  <div class="proj">
+    <div class="proj-title">RecomindSystem &mdash; Production RAG</div>
+    <div>Production RAG with DeepSeek-V3, multimodal BLIP2 + AraBERT retrieval over a FAISS/HNSW vector store, plus an ALS hybrid recommender. 90%+ cross-lingual accuracy, 40% lower latency.</div>
+    <div class="proj-stack">DeepSeek-V3, FAISS, BLIP2, AraBERT, FastAPI</div>
+  </div>
+
+  <div class="proj">
+    <div class="proj-title">Mualimi &mdash; Offline AI Tutor (Gemma Hackathon)</div>
+    <div>Offline AI tutoring platform: Gemma via Ollama with a LangChain + ChromaDB RAG engine. React 19 PWA + FastAPI (30+ endpoints), image-based problem solving, adaptive quizzes.</div>
+    <div class="proj-stack">Gemma, Ollama, LangChain, ChromaDB, React</div>
+  </div>
+
+  <div class="proj">
+    <div class="proj-title">Arabic Text Separators &mdash; Punctuation NLP</div>
+    <div>Deep-learning punctuation restoration for Arabic: a 7-class token-classification model (BiLSTM / Transformer + AraBERT transfer learning) on the UNPC corpus &mdash; ~96.2% validation accuracy.</div>
+    <div class="proj-stack">TensorFlow, BiLSTM, AraBERT, Arabic NLP</div>
+  </div>
+
+  <div class="proj">
+    <div class="proj-title">MediCore &mdash; Medical Platform Backend</div>
+    <div>Full Laravel backend: 20+ interconnected models, multi-role RBAC with 2FA &amp; Sanctum, appointment scheduling, dynamic doctor search, secure medical-file management.</div>
+    <div class="proj-stack">Laravel, PHP, MySQL, Sanctum, REST</div>
+  </div>
+
+  <div class="proj">
+    <div class="proj-title">threejs1 &mdash; 3D Game in Three.js</div>
+    <div>Browser 3D game with a custom water shader (WaterPlus), a flying jet, and a physics module &mdash; real-time WebGL rendering.</div>
+    <div class="proj-stack">Three.js, WebGL, Shaders, JavaScript</div>
+  </div>
+
+  <h2>Education</h2>
+  <div class="edu-top">
+    <span class="edu-title">B.Sc. in Artificial Intelligence Engineering &mdash; University of Damascus</span>
+    <span class="job-meta">Expected 2026<span class="note">&nbsp;CONFIRM graduation year&nbsp;</span></span>
+  </div>
+  <div>Damascus, Syria<span class="note">&nbsp;Add GPA here if strong&nbsp;</span></div>
+
+</body>
+</html>

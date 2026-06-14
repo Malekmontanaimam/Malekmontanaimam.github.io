@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Malek Imam — AI / Machine Learning Engineer</title>
+  <meta name="description" content="Malek Imam — Final-year AI Engineering student. RAG systems, multimodal retrieval, LLMs, and Arabic NLP. Portfolio & CV." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Tajawal:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- 3D background canvas -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Loader -->
+  <div id="loader">
+    <div class="loader-core"></div>
+    <div class="loader-text">MALEK<span>IMAM</span></div>
+  </div>
+
+  <!-- Top navigation -->
+  <header class="nav">
+    <a href="#hero" class="nav-logo">MI<span>.</span></a>
+    <nav class="nav-links">
+      <a href="#about" data-en="About" data-ar="نبذة">About</a>
+      <a href="#experience" data-en="Experience" data-ar="الخبرة">Experience</a>
+      <a href="#projects" data-en="Projects" data-ar="المشاريع">Projects</a>
+      <a href="#skills" data-en="Skills" data-ar="المهارات">Skills</a>
+      <a href="#contact" data-en="Contact" data-ar="تواصل">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/malek-imam-024651276" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+        </a>
+        <a href="https://github.com/Malekmontanaimam" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.49 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12.01 12.01 0 0 0 24 12.5C24 5.87 18.63.5 12 .5z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/share/18xrYUhSfN/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.89v2.25h3.32l-.53 3.49h-2.79V24C19.61 23.1 24 18.1 24 12.07z"/></svg>
+        </a>
+      </div>
+      <button id="lang-toggle" class="btn-ghost" title="Switch language">العربية</button>
+      <a href="#" id="download-cv" class="btn-solid" data-en="Download CV" data-ar="تحميل السيرة">Download CV</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="hero" class="hero">
+      <div class="hero-inner">
+        <p class="hero-eyebrow" data-en="// AI &amp; Machine Learning Engineer" data-ar="// مهندس ذكاء اصطناعي وتعلّم آلي">// AI &amp; Machine Learning Engineer</p>
+        <h1 class="hero-name">
+          <span class="line">MALEK</span>
+          <span class="line accent">IMAM</span>
+        </h1>
+        <p class="hero-tagline"
+           data-en="I build production-grade RAG systems, multimodal retrieval pipelines, and Arabic-first AI."
+           data-ar="أبني أنظمة RAG جاهزة للإنتاج، وخطوط استرجاع متعددة الوسائط، وذكاءً اصطناعياً عربياً.">
+          I build production-grade RAG systems, multimodal retrieval pipelines, and Arabic-first AI.
+        </p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn-solid" data-en="View my work" data-ar="شاهد أعمالي">View my work</a>
+          <a href="https://github.com/Malekmontanaimam" target="_blank" rel="noopener" class="btn-ghost">GitHub ↗</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><span class="stat-num" data-count="90">0</span><span class="stat-unit">%+</span><small data-en="Cross-lingual retrieval accuracy" data-ar="دقة الاسترجاع متعدد اللغات">Cross-lingual retrieval accuracy</small></div>
+          <div class="stat"><span class="stat-num" data-count="40">0</span><span class="stat-unit">%</span><small data-en="Latency reduction" data-ar="تقليل زمن الاستجابة">Latency reduction</small></div>
+          <div class="stat"><span class="stat-num" data-count="14">0</span><span class="stat-unit">+</span><small data-en="Public repositories" data-ar="مستودع عام">Public repositories</small></div>
+        </div>
+      </div>
+      <div class="scroll-hint"><span data-en="Scroll" data-ar="مرّر">Scroll</span><i></i></div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="section-head">
+        <span class="section-index">01</span>
+        <h2 data-en="About" data-ar="نبذة عني">About</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p data-en="Final-year AI Engineering student at the University of Damascus with hands-on experience building production-grade RAG systems and multimodal retrieval pipelines."
+             data-ar="طالب هندسة ذكاء اصطناعي في سنته الأخيرة بجامعة دمشق، مع خبرة عملية في بناء أنظمة RAG جاهزة للإنتاج وخطوط استرجاع متعددة الوسائط.">
+            Final-year AI Engineering student at the University of Damascus with hands-on experience building production-grade RAG systems and multimodal retrieval pipelines.
+          </p>
+          <p data-en="I specialize in integrating LLMs (DeepSeek-V3), vision-language models (BLIP2), and Arabic NLP models (AraBERT) with vector databases (FAISS) — and shipping them through clean APIs."
+             data-ar="أتخصص في دمج نماذج اللغة الكبيرة (DeepSeek-V3)، ونماذج الرؤية واللغة (BLIP2)، ونماذج اللغة العربية (AraBERT) مع قواعد البيانات الشعاعية (FAISS) — وتقديمها عبر واجهات برمجية نظيفة.">
+            I specialize in integrating LLMs (DeepSeek-V3), vision-language models (BLIP2), and Arabic NLP models (AraBERT) with vector databases (FAISS) — and shipping them through clean APIs.
+          </p>
+          <p data-en="On the engineering side I build production backends with Laravel &amp; FastAPI, and interactive 3D experiences with Three.js — this very site (and my threejs1 game) is one of them."
+             data-ar="على الجانب الهندسي أبني باك-إند إنتاجي بـ Laravel و FastAPI، وتجارب ثلاثية الأبعاد تفاعلية بـ Three.js — وهذا الموقع نفسه (ولعبة threejs1) خير مثال.">
+            On the engineering side I build production backends with Laravel &amp; FastAPI, and interactive 3D experiences with Three.js — this very site (and my threejs1 game) is one of them.
+          </p>
+          <ul class="about-facts">
+            <li><span data-en="Location" data-ar="الموقع">Location</span><strong>Damascus, Syria</strong></li>
+            <li><span data-en="Focus" data-ar="التركيز">Focus</span><strong data-en="RAG · NLP · Laravel · Three.js" data-ar="RAG · معالجة لغة · Laravel · Three.js">RAG · NLP · Laravel · Three.js</strong></li>
+            <li><span data-en="Languages" data-ar="اللغات">Languages</span><strong data-en="Arabic · English" data-ar="العربية · الإنجليزية">Arabic · English</strong></li>
+            <li><span data-en="Status" data-ar="الحالة">Status</span><strong data-en="Open to ML roles" data-ar="متاح لفرص التعلّم الآلي">Open to ML roles</strong></li>
+          </ul>
+        </div>
+        <div class="about-card" id="tilt-card">
+          <div class="about-card-inner">
+            <div class="terminal-dots"><i></i><i></i><i></i></div>
+            <pre class="code-block"><span class="c-key">class</span> <span class="c-cls">MLEngineer</span>:
+  name        = <span class="c-str">"Malek Imam"</span>
+  role        = <span class="c-str">"AI / ML Engineer"</span>
+  ai_stack    = [<span class="c-str">"PyTorch"</span>, <span class="c-str">"FAISS"</span>,
+                 <span class="c-str">"LangChain"</span>, <span class="c-str">"LLMs"</span>]
+  eng_stack   = [<span class="c-str">"Laravel"</span>, <span class="c-str">"FastAPI"</span>,
+                 <span class="c-str">"Three.js"</span>, <span class="c-str">"React"</span>]
+  specialties = [<span class="c-str">"RAG"</span>, <span class="c-str">"Arabic NLP"</span>,
+                 <span class="c-str">"Backend"</span>, <span class="c-str">"WebGL"</span>]
+
+  <span class="c-key">def</span> <span class="c-fn">ship</span>(self, idea):
+      <span class="c-key">return</span> production_ready(idea)</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section">
+      <div class="section-head">
+        <span class="section-index">02</span>
+        <h2 data-en="Experience" data-ar="الخبرة العملية">Experience</h2>
+      </div>
+      <div class="timeline">
+        <article class="tl-item reveal">
+          <div class="tl-marker"></div>
+          <div class="tl-body">
+            <div class="tl-top">
+              <h3>AI Engineering Intern — <span class="accent">Trendova</span></h3>
+              <span class="tl-date">Jan 2024 – Present</span>
+            </div>
+            <p class="tl-role" data-en="RecomindSystem · Remote" data-ar="نظام RecomindSystem · عن بعد">RecomindSystem · Remote</p>
+            <ul>
+              <li data-en="Developed and deployed a production-grade RAG system using DeepSeek-V3 for multilingual chatbot functionality." data-ar="طوّرت ونشرت نظام RAG جاهزاً للإنتاج باستخدام DeepSeek-V3 لروبوت محادثة متعدد اللغات.">Developed and deployed a production-grade RAG system using DeepSeek-V3 for multilingual chatbot functionality.</li>
+              <li data-en="Implemented a multimodal retrieval pipeline integrating BLIP2 vision-language models with Arabic NLP (AraBERT v2)." data-ar="نفّذت خط استرجاع متعدد الوسائط يدمج نماذج BLIP2 للرؤية واللغة مع معالجة اللغة العربية (AraBERT v2).">Implemented a multimodal retrieval pipeline integrating BLIP2 vision-language models with Arabic NLP (AraBERT v2).</li>
+              <li data-en="Built a scalable vector database with FAISS + HNSW indexing for real-time product search." data-ar="بنيت قاعدة بيانات شعاعية قابلة للتوسّع باستخدام FAISS مع فهرسة HNSW للبحث الفوري عن المنتجات.">Built a scalable vector database with FAISS + HNSW indexing for real-time product search.</li>
+              <li data-en="Designed a hybrid recommender combining collaborative filtering (ALS) and content-based approaches." data-ar="صمّمت نظام توصية هجيناً يجمع بين الترشيح التعاوني (ALS) والأساليب المعتمدة على المحتوى.">Designed a hybrid recommender combining collaborative filtering (ALS) and content-based approaches.</li>
+              <li data-en="Achieved 90%+ accuracy in Arabic–English cross-lingual retrieval and cut response latency by 40%." data-ar="حقّقت دقة تتجاوز 90% في الاسترجاع متعدد اللغات (عربي–إنجليزي) وخفّضت زمن الاستجابة بنسبة 40%.">Achieved 90%+ accuracy in Arabic–English cross-lingual retrieval and cut response latency by 40%.</li>
+            </ul>
+            <div class="tag-row">
+              <span>DeepSeek-V3</span><span>BLIP2</span><span>AraBERT</span><span>FAISS</span><span>FastAPI</span><span>Node.js</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="tl-item reveal">
+          <div class="tl-marker"></div>
+          <div class="tl-body">
+            <div class="tl-top">
+              <h3>Backend Engineer — <span class="accent">MediCore</span></h3>
+              <span class="tl-date">Jan 2023 – 2024</span>
+            </div>
+            <p class="tl-role" data-en="Medical Management System · Remote" data-ar="نظام إدارة طبية · عن بعد">Medical Management System · Remote</p>
+            <ul>
+              <li data-en="Built a comprehensive medical platform with Laravel, serving patients, doctors, secretaries, and admins." data-ar="بنيت منصة طبية شاملة باستخدام Laravel، تخدم المرضى والأطباء والسكرتارية والمدراء.">Built a comprehensive medical platform with Laravel, serving patients, doctors, secretaries, and admins.</li>
+              <li data-en="Architected 20+ interconnected models — appointments, medical files, profiles, and specialties." data-ar="صمّمت أكثر من 20 نموذجاً مترابطاً — المواعيد، الملفات الطبية، الحسابات، والتخصصات.">Architected 20+ interconnected models — appointments, medical files, profiles, and specialties.</li>
+              <li data-en="Implemented multi-role auth with RBAC, two-factor authentication, and Laravel Sanctum tokens." data-ar="نفّذت نظام مصادقة متعدد الأدوار مع صلاحيات RBAC ومصادقة ثنائية ورموز Laravel Sanctum.">Implemented multi-role auth with RBAC, two-factor authentication, and Laravel Sanctum tokens.</li>
+              <li data-en="Designed RESTful APIs for booking, file uploads, dynamic doctor search, and real-time notifications." data-ar="صمّمت واجهات REST للحجز ورفع الملفات والبحث الديناميكي عن الأطباء والإشعارات الفورية.">Designed RESTful APIs for booking, file uploads, dynamic doctor search, and real-time notifications.</li>
+            </ul>
+            <div class="tag-row">
+              <span>Laravel</span><span>PHP</span><span>MySQL</span><span>REST</span><span>Sanctum</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <div class="section-head">
+        <span class="section-index">03</span>
+        <h2 data-en="Selected Projects" data-ar="مشاريع مختارة">Selected Projects</h2>
+      </div>
+      <div class="projects-grid" id="projects-grid"><!-- injected by JS --></div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+      <div class="section-head">
+        <span class="section-index">04</span>
+        <h2 data-en="Technical Skills" data-ar="المهارات التقنية">Technical Skills</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-cat reveal">
+          <h4 data-en="AI &amp; Machine Learning" data-ar="الذكاء الاصطناعي والتعلّم الآلي">AI &amp; Machine Learning</h4>
+          <div class="chips"><span>RAG</span><span>LLMs / DeepSeek-V3</span><span>Diffusion (DDPM / LayoutDM)</span><span>BLIP2 (VLM)</span><span>AraBERT</span><span>FAISS</span><span>Collaborative Filtering (ALS)</span><span>PyTorch</span><span>scikit-learn</span></div>
+        </div>
+        <div class="skill-cat reveal">
+          <h4 data-en="Frameworks &amp; Libraries" data-ar="أطر العمل والمكتبات">Frameworks &amp; Libraries</h4>
+          <div class="chips"><span>FastAPI</span><span>NestJS</span><span>Next.js</span><span>Node.js</span><span>Laravel</span><span>React</span><span>Prisma</span><span>Apollo / GraphQL</span><span>Flutter</span><span>Three.js</span></div>
+        </div>
+        <div class="skill-cat reveal">
+          <h4 data-en="Databases &amp; Storage" data-ar="قواعد البيانات والتخزين">Databases &amp; Storage</h4>
+          <div class="chips"><span>FAISS (Vector)</span><span>ChromaDB</span><span>PostgreSQL</span><span>MySQL</span><span>HNSW Indexing</span><span>File Storage</span></div>
+        </div>
+        <div class="skill-cat reveal">
+          <h4 data-en="DevOps &amp; Tools" data-ar="أدوات التطوير والتشغيل">DevOps &amp; Tools</h4>
+          <div class="chips"><span>Git / GitHub</span><span>Docker</span><span>REST APIs</span><span>Linux</span><span>Postman</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact">
+      <div class="section-head center">
+        <span class="section-index">05</span>
+        <h2 data-en="Let's build something" data-ar="لنبنِ شيئاً معاً">Let's build something</h2>
+      </div>
+      <p class="contact-lead"
+         data-en="Open to Machine Learning Engineer roles and AI collaborations. Reach out — I reply fast."
+         data-ar="متاح لفرص مهندس تعلّم آلي وللتعاون في مشاريع الذكاء الاصطناعي. تواصل معي — أرد بسرعة.">
+        Open to Machine Learning Engineer roles and AI collaborations. Reach out — I reply fast.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:malekimam123@gmail.com" class="contact-link"><span class="cl-label">Email</span><span class="cl-val">malekimam123@gmail.com</span></a>
+        <a href="https://www.linkedin.com/in/malek-imam-024651276" target="_blank" rel="noopener" class="contact-link"><span class="cl-label">LinkedIn</span><span class="cl-val">malek-imam</span></a>
+        <a href="https://github.com/Malekmontanaimam" target="_blank" rel="noopener" class="contact-link"><span class="cl-label">GitHub</span><span class="cl-val">Malekmontanaimam</span></a>
+        <a href="https://www.facebook.com/share/18xrYUhSfN/?mibextid=wwXIfr" target="_blank" rel="noopener" class="contact-link"><span class="cl-label">Facebook</span><span class="cl-val">Malek Imam</span></a>
+        <a href="tel:+963940965738" class="contact-link"><span class="cl-label">Phone</span><span class="cl-val">+963 940 965 738</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© <span id="year"></span> Malek Imam</span>
+    <div class="social-icons footer-social">
+      <a href="https://www.linkedin.com/in/malek-imam-024651276" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+      </a>
+      <a href="https://github.com/Malekmontanaimam" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.49 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12.01 12.01 0 0 0 24 12.5C24 5.87 18.63.5 12 .5z"/></svg>
+      </a>
+      <a href="https://www.facebook.com/share/18xrYUhSfN/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.89v2.25h3.32l-.53 3.49h-2.79V24C19.61 23.1 24 18.1 24 12.07z"/></svg>
+      </a>
+      <a href="mailto:malekimam123@gmail.com" aria-label="Email" title="Email">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 4H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4.24-10 6.25L2 8.24V6l10 6.25L22 6z"/></svg>
+      </a>
+    </div>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
